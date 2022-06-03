@@ -34,7 +34,7 @@ body {
 .cover-container {
 
     max-width: 50em;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0px 0px 35px 10px rgba(0, 0, 0, 1);
     
 }
@@ -74,8 +74,10 @@ header {
 }
 
 .masthead-brand {
-    margin-bottom: 0;
+    font-size: 20px;
+    text-decoration: none!important;
 }
+
 .h3 {
     font-size: 1.75rem;
 }
@@ -121,6 +123,6 @@ header {
     border-bottom-color: #fff;
 }
 .mastfoot {
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .6);
   }
   

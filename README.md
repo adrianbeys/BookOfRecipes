@@ -1,4 +1,4 @@
-<a href="/"><img src="website/static/images/booklogo.png" height="55"></a>
+<a href="/"><img src="website/static/images/booklogover2.png" height="58"></a>
 ## Table of contents
 * [General info](#general-info)
 * [Installation](#installation)

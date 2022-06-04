@@ -20,19 +20,50 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      {% if current_user.is_authenticated %}
+        <a class="navbar-brand" href="/home">
+          <img src="/static/images/e-book.png"  alt="logo navbar" height="42">&nbsp; Book of recipes</a>
+      {% else %}
         <a class="navbar-brand" href="/">
           <img src="/static/images/e-book.png"  alt="logo navbar" height="42">&nbsp; Book of recipes</a>
+      {% endif %}
         <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
           <div class="navbar-nav">
+            {% if current_user.is_authenticated %}
             <a class="nav-item nav-link" id="home" href="/home">Home</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-            <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            {% endif %}
+            
+            <!-- <a class="nav-item nav-link" id="login" href="/login">Login</a>
             <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a> -->
           </div>
+          <!-- user dropdown -->
+          {% if current_user.is_authenticated %}
+          <div class="nav-item dropdown">
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/static/images/user.png" class="avatar" alt="Avatar"> {{ current_user.username }} <b class="caret"></b></a>
+            <div class="dropdown-menu">
+              <a href="/profile" class="dropdown-item">Profile</a></a>
+              <a href="/settings" class="dropdown-item">Settings</a></a>
+              <div class="dropdown-divider"></div>
+              <a href="/logout" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a></a>
+            </div>
+          </div>
+          {% else %}
+        <!-- login and register buttons -->
+        <div class="navbar-collapse collapse order-1 justify-content-end" id="navbar">
+          <div class="navbar-nav">
+              <a class="nav-item nav-link" id="login" href="/login">Login</a>
+              <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
+          </div>
+        </div>
+        {% endif %}
     </nav>
+
+    {% block content %}    
+    {% endblock %}
 
       <!--scripts-->
     <script

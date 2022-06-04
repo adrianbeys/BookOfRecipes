@@ -7,6 +7,9 @@ body{
     position: sticky!important;
     background: rgb(70, 63, 58)!important ;
 }
+#navbar{
+    padding-right: 25px;
+}
 .nav-link{
     text-align: center;
 }

@@ -39,6 +39,7 @@ def login():
 
 @app.route('/logout')
 def logout():
-    return "<p>logout</p>"
+    logout_user()
+    return redirect(url_for("main"))
 
 

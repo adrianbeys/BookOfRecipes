@@ -15,7 +15,6 @@ class DBGenerator():
         self.db._engine.create_all()
 
     def createDB(self):
-        self.createDevices()
         self.createRoles()
         self.createProfiles()
         self.createUsers()
@@ -28,10 +27,10 @@ class DBGenerator():
         self.db.session.add(UserRole(name=UserRole.ADMIN))
 
     def createProfiles(self):
-        profile1 = UserProfile(first_name = "Ludzie", last_name = "Wszyscy",
+        profile1 = UserProfile(firstname = "Ludzie", last_name = "Kowalski",
                                 date_of_birth = datetime.datetime.now(), age = 22,
                                 gender = "Male", nationality = "Poland", avatarName = "user")
-        profile2 = UserProfile(first_name = "Adrian", last_name = "Bejs",
+        profile2 = UserProfile(firstname = "Adrian", last_name = "Forest",
                                 date_of_birth = datetime.datetime.now(), age = 22,
                                 gender = "Male", nationality = "Poland", avatarName = "user")
    
@@ -40,18 +39,16 @@ class DBGenerator():
 
     def createUsers(self):
         i = 1
-        usernames = ["Adam","Sebastian","Wiktoria","Aleksander",
-                    "Mateusz","Piotr", "Ola", "Karolina", "Kasia",
-                    "Natalia", "Krzysztof", "Jan"]
+        usernames = ["Adam","Mike","Olivia"]
         for user in usernames:
-            user = User(username = user, email = user + "@gmail.com", 
+            user = User(username = user, email = user + "@box.com", 
                     passwordHash = self.randomHash(60), roleId = 1, profileId = 1)
             self.db.AddUser(user)
             i+=1
             self.users.append(user)
 
         admin1 = User(username="admin", email = "adminbor@bor.com", 
-                password = "qwerty1234",
+                password = "Cola4000!",
                 roleId = 2, profileId = 2)
 
         self.db.AddUser(admin1)

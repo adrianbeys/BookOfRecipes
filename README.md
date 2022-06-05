@@ -15,7 +15,7 @@ The main goal of this project is to secure users login credentials. The website 
 3. VSC plugins - Python and Pylance
 
 ### • Vs Code installation of packages:
-open a command-line
+Open a command-line.
 ```
 cd ../BookOfRecipe
 pip install flask
@@ -25,6 +25,11 @@ pip install -r requirements.txt
 // opctional virtual environment
 python -m venv venv
 venv\Scripts\activate
+```
+You will need to generate a database to log in.
+```
+cd ../BookOfRecipe
+python db_generator.py 
 ```
 ## Links
 [Bootstrap v4.6.1](https://getbootstrap.com/docs/4.6/getting-started/introduction/)

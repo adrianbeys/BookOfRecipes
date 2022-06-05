@@ -42,12 +42,12 @@
           <!-- user dropdown -->
           {% if current_user.is_authenticated %}
           <div class="nav-item dropdown">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/static/images/user.png" class="avatar" alt="Avatar"> {{ current_user.username }} <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/static/images/user.png" height="28" class="avatar" alt="Avatar"> {{ current_user.username }} <b class="caret"></b></a>
             <div class="dropdown-menu">
               <a href="/profile" class="dropdown-item">Profile</a></a>
               <a href="/settings" class="dropdown-item">Settings</a></a>
               <div class="dropdown-divider"></div>
-              <a href="/logout" class="dropdown-item" data-toggle="modal" data-target="#logoutModal">Logout</a></a>
+              <a href="/logout" class="dropdown-item">Logout</a></a>
             </div>
           </div>
           {% else %}

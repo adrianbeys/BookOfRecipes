@@ -38,6 +38,7 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
     email = db.Column(db.String(50), nullable = False, unique = True)
     username = db.Column(db.String(30), nullable = False, unique = True)
+    firstname = db.Column(db.String(30))
     passwordHash = db.Column(db.String(60), nullable = False)
     active = db.Column(db.Boolean(), nullable = False, default = True)
     roleId = db.Column(db.Integer, db.ForeignKey("roles.id", ondelete='CASCADE'), nullable=False)

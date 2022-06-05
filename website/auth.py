@@ -22,11 +22,13 @@ def sign_up():
     if form.validate_on_submit():
         newProfile = UserProfile()
         db.AddProfile(newProfile)
+        db.session.commit()
         newUser = User(email=form.emailAddress.data,
                        username=form.username.data, 
                        firstname=form.firstname.data,             
                        password=form.password1.data,
                        roleId=1, profileId = newProfile.id)
+        newUser.profileId=newProfile.id
         db.AddUser(newUser)  
         db.Flush()
         login_user(newUser)
@@ -36,6 +38,8 @@ def sign_up():
 @app.route("/login", methods=['GET', 'POST'])
 def login_page():
     form = LoginForm()
+    if current_user.is_authenticated:
+        return redirect(url_for(home_page))
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if not user:

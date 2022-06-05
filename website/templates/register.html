@@ -22,7 +22,7 @@ Register
     </div>
 
     <div class="form-group">
-      {{ form.emailAddress(placeholder="First name", class_="form-control") }}
+      {{ form.firstname(placeholder="First name", class_="form-control") }}
       <label class="form-label" for="firstname">First name</label>
     </div>
 
@@ -44,6 +44,6 @@ Register
   </form>    
     
 </div>
-
-
+<!--script-->
+<script type="text/javascript" src="{{ url_for('static', filename='scripts/block.js') }}"></script>
 {% endblock %}

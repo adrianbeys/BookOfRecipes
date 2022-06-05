@@ -33,9 +33,17 @@ def sign_up():
         return redirect(url_for('home_page'))
     return render_template("register.html", form=form)
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
+@app.route("/login", methods=['GET', 'POST'])
+def login_page():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if not user:
+             user = User.query.filter_by(email=form.username.data).first()
+        if (user and user.VerifyPassword(attemptedPassword = form.password.data)):
+            login_user(user)
+            return redirect(url_for('home_page'))
+    return render_template("login.html", form=form)
 
 @app.route('/logout')
 def logout():

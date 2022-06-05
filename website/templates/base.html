@@ -30,16 +30,15 @@
         <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- buttons -->
+        {% if current_user.is_authenticated %}
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
           <div class="navbar-nav">
-            {% if current_user.is_authenticated %}
-            <a class="nav-item nav-link" id="home" href="/home">Home</a>
-            {% endif %}
             
-            <!-- <a class="nav-item nav-link" id="login" href="/login">Login</a>
-            <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
-            <a class="nav-item nav-link" id="logout" href="/logout">Logout</a> -->
+            <a class="nav-item nav-link" id="home" href="/home">Home</a>
+            
           </div>
+          {% endif %}
           <!-- user dropdown -->
           {% if current_user.is_authenticated %}
           <div class="nav-item dropdown">
@@ -53,6 +52,7 @@
           </div>
           {% else %}
         <!-- login and register buttons -->
+
         <div class="navbar-collapse collapse order-1 justify-content-end" id="navbar">
           <div class="navbar-nav">
               <a class="nav-item nav-link" id="login" href="/login">Login</a>

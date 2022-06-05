@@ -1,0 +1,18 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body{
+    background-color: #8a817c;
+}
+.cover-container {
+    margin-top: 3em;
+    background-color: #fff;
+    max-width: 52em;
+}
+form {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.signbutton{
+    max-width: 20em;
+}

@@ -1,13 +1,17 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
+import os
 
-def create_app():
-    app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'dshdshdsh dshdsh'
+app = Flask(__name__)
+bcrypt = Bcrypt(app)
 
-    from .views import views
-    from .auth import auth
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DatabaseWeb.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
 
-    app.register_blueprint(views, url_prefix="/")
-    app.register_blueprint(auth, url_prefix="/")
+login_manager = LoginManager(app)
+app.config['SECRET_KEY'] = os.urandom(32)
 
-    return app
+from website import auth

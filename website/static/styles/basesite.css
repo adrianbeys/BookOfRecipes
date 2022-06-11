@@ -5,10 +5,14 @@ body{
 
 .navbar {
     position: sticky!important;
+    top: 0;
     background: rgb(70, 63, 58)!important ;
 }
 #navbar{
     padding-right: 25px;
+}
+.dropdown-menu{
+    min-width: 8rem!important;
 }
 .nav-link{
     text-align: center;

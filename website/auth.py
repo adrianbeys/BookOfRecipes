@@ -54,4 +54,8 @@ def logout():
     logout_user()
     return redirect(url_for("main"))
 
+@app.route('/addpost')
+def addpost_page():
+    return render_template("addpost.html")
+
 

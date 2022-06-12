@@ -1,0 +1,33 @@
+body{
+    background-color: #8a817c;
+}
+.cover-container {
+    background-color: #fff;
+    max-width: 52em;
+}
+.post-editor,
+.stream-post {
+    padding: .75rem;
+    background: #f7f7f9;
+    border: 1px solid #eceeef;
+    border-radius: .25rem;
+    margin-bottom: 1.5rem
+}
+.post-editor .post-field {
+    width: 100%;
+    height: 120px;
+    resize: vertical;
+    border-radius: .25rem;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border-color: #eceeef
+}
+
+.post-editor .post-field:focus {
+    box-shadow: none;
+    outline: none
+}
+
+.stream-post {
+    position: relative
+}

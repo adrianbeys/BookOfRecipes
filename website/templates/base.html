@@ -34,15 +34,16 @@
         {% if current_user.is_authenticated %}
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
           <div class="navbar-nav">
-            
-            <a class="nav-item nav-link" id="home" href="/home">Home</a>
-            
+            <a class="nav-item nav-link" id="home" href="/home">Home</a> 
+          </div>
+          <div class="navbar-nav mr-4">
+            <a class="nav-item nav-link" id="home" href="/addpost">Add Post</a> 
           </div>
           {% endif %}
           <!-- user dropdown -->
           {% if current_user.is_authenticated %}
           <div class="nav-item dropdown">
-            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/static/images/user.png" height="28" class="avatar" alt="Avatar"> {{ current_user.username }} <b class="caret"></b></a>
+            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle user-action"><img src="/static/images/user.png" height="28" class="avatar" alt="Avatar"> {{ current_user.username }} </a>
             <div class="dropdown-menu">
               <a href="/profile" class="dropdown-item">Profile</a></a>
               <a href="/settings" class="dropdown-item">Settings</a></a>
